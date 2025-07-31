@@ -48,8 +48,7 @@ jobs:
       run: |
         export PATH="$CLANG_PATH/bin:$GCC_PATH/bin:$GCC32_PATH/bin:$PATH"
         export LD_LIBRARY_PATH="$CLANG_PATH/lib64:$LD_LIBRARY_PATH"
-        curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s next
-        sed -i '16s/default y/default n/' drivers/kernelsu/Kconfig
+        curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
         make O=out ARCH=arm64 clean
         make O=out ARCH=arm64 lavender_defconfig
         make -j$(nproc --all) O=out \
